@@ -1,0 +1,21 @@
+meta {
+  name: Get Resource Current
+  type: http
+  seq: 5
+}
+
+get {
+  url: https://api.glowmarkt.com/api/v0-1/resource/36f21351-aac6-4109-9f95-2307bc453e1d/current
+  body: none
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  token: {{authToken}}
+  applicationId: {{brightAppId}}
+}
+
+settings {
+  encodeUrl: true
+}

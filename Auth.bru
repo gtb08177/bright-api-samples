@@ -1,0 +1,37 @@
+meta {
+  name: Auth
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://api.glowmarkt.com/api/v0-1/auth
+  body: json
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  { 
+    "username": "{{username}}",
+    "password": "{{password}}",
+    "applicationId": "{{brightAppId}}"
+  }
+}
+
+tests {
+  const responseJson = res.body;
+  
+  // Extract token
+  const token = responseJson.token;
+  
+  // Save it for later requests
+  bru.setVar("authToken", token);
+}
+
+settings {
+  encodeUrl: true
+}

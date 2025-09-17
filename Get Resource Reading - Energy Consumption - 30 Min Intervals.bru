@@ -1,0 +1,28 @@
+meta {
+  name: Get Resource Reading - Energy Consumption - 30 Min Intervals
+  type: http
+  seq: 6
+}
+
+get {
+  url: https://api.glowmarkt.com/api/v0-1/resource/36f21351-aac6-4109-9f95-2307bc453e1d/readings?period=PT30M&function=sum&from=2025-09-01T00:00:00&to=2025-09-10T23:59:59
+  body: none
+  auth: inherit
+}
+
+params:query {
+  period: PT30M
+  function: sum
+  from: 2025-09-01T00:00:00
+  to: 2025-09-10T23:59:59
+}
+
+headers {
+  Content-Type: application/json
+  token: {{authToken}}
+  applicationId: {{brightAppId}}
+}
+
+settings {
+  encodeUrl: true
+}

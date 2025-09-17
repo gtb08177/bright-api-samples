@@ -1,0 +1,21 @@
+meta {
+  name: Get VE
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://api.glowmarkt.com/api/v0-1/virtualentity/{{virtualEntityId}}
+  body: none
+  auth: inherit
+}
+
+headers {
+  Content-Type: application/json
+  token: {{authToken}}
+  applicationId: {{brightAppId}}
+}
+
+settings {
+  encodeUrl: true
+}

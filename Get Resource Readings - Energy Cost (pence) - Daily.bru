@@ -1,0 +1,28 @@
+meta {
+  name: Get Resource Readings - Energy Cost (pence) - Daily
+  type: http
+  seq: 8
+}
+
+get {
+  url: https://api.glowmarkt.com/api/v0-1/resource/83cbdbc1-d18f-4fb1-96ac-520cd2eb1876/readings?period=P1D&function=sum&from=2025-09-01T00:00:00&to=2025-09-10T23:59:59
+  body: none
+  auth: inherit
+}
+
+params:query {
+  period: P1D
+  function: sum
+  from: 2025-09-01T00:00:00
+  to: 2025-09-10T23:59:59
+}
+
+headers {
+  Content-Type: application/json
+  token: {{authToken}}
+  applicationId: {{brightAppId}}
+}
+
+settings {
+  encodeUrl: true
+}
