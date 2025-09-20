@@ -54,7 +54,7 @@ def generate_monthly_ranges(overall_start_month=5, overall_start_year=2024):
     return months
 
 def setup_cost_file():
-    output_file_cost = f"{datetime.datetime.now().strftime('%Y-%m-%d')}_hourly_data_cost.csv"
+    output_file_cost = f"{datetime.datetime.now().strftime('%Y-%m-%d')}_hourly_data_cost.txt"
     
     if os.path.exists(output_file_cost):
         os.remove(output_file_cost)
@@ -62,7 +62,7 @@ def setup_cost_file():
     return output_file_cost
 
 def setup_consumption_file():
-    output_file_consumption = f"{datetime.datetime.now().strftime('%Y-%m-%d')}_hourly_data_consumption.csv"
+    output_file_consumption = f"{datetime.datetime.now().strftime('%Y-%m-%d')}_hourly_data_consumption.txt"
 
     if os.path.exists(output_file_consumption):
         os.remove(output_file_consumption)
